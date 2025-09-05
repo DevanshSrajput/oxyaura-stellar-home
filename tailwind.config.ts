@@ -26,7 +26,8 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					glow: 'hsl(var(--primary-glow))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -52,6 +53,11 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				'luxury-gold': 'hsl(var(--luxury-gold))',
+				'deep-copper': 'hsl(var(--deep-copper))',
+				'mystic-purple': 'hsl(var(--mystic-purple))',
+				'warm-ivory': 'hsl(var(--warm-ivory))',
+				'earth-brown': 'hsl(var(--earth-brown))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -62,6 +68,23 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			fontFamily: {
+				'sans': ['Inter', 'sans-serif'],
+				'serif': ['Playfair Display', 'serif'],
+			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-mystic': 'var(--gradient-mystic)',
+				'gradient-warm': 'var(--gradient-warm)',
+			},
+			boxShadow: {
+				'luxury': 'var(--shadow-luxury)',
+				'soft': 'var(--shadow-soft)',
+				'glow': 'var(--shadow-glow)',
+			},
+			transitionTimingFunction: {
+				'luxury': 'cubic-bezier(0.4, 0, 0.2, 1)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
