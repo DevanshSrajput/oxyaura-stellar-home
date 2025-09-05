@@ -153,7 +153,7 @@ const ProductGrid = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {products.map((product, index) => (
-            <Card key={product.id} className="card-product" style={{ animationDelay: `${index * 0.1}s` }}>
+            <Card key={product.id} className="card-product group" style={{ animationDelay: `${index * 0.1}s` }}>
               <div className="relative overflow-hidden rounded-t-3xl">
                 <img
                   src={product.image}

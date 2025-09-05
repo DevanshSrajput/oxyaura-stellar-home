@@ -1,9 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+/* Oxyaura Design System - Warm, Elegant, Spiritual */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Oxyaura Design System - Warm, Elegant, Spiritual */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
@@ -120,9 +120,6 @@
     --sidebar-border: 25 15% 20%;
     --sidebar-ring: 35 75% 55%;
   }
-}
-
-@layer base {
   * {
     @apply border-border;
   }
@@ -138,6 +135,45 @@
 }
 
 @layer components {
+  /* Global aesthetic background enhancements */
+  .app-bg {
+    @apply relative min-h-screen bg-gradient-to-br from-warm-ivory via-card to-warm-ivory/80 dark:from-background dark:via-card dark:to-background;
+    background-attachment: fixed;
+  }
+
+  .app-bg::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(circle at 15% 20%, hsl(var(--primary)/0.12), transparent 60%),
+      radial-gradient(circle at 85% 70%, hsl(var(--accent)/0.12), transparent 55%),
+      radial-gradient(circle at 70% 25%, hsl(var(--luxury-gold)/0.10), transparent 55%);
+    pointer-events: none;
+    mix-blend-mode: plus-lighter;
+    animation: auraPulse 12s ease-in-out infinite alternate;
+    z-index: 0;
+  }
+
+  .app-bg::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+      repeating-linear-gradient(45deg, hsl(var(--primary)/0.025) 0 2px, transparent 2px 8px),
+      radial-gradient(circle at 50% 50%, hsl(var(--foreground)/0.05), transparent 70%);
+    opacity: 0.35;
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  @keyframes auraPulse {
+    0% { filter: hue-rotate(0deg) blur(0px); opacity: 0.9; }
+    50% { filter: hue-rotate(25deg) blur(1px); opacity: 1; }
+    100% { filter: hue-rotate(-25deg) blur(2px); opacity: 0.95; }
+  }
+
   /* Enhanced Luxury Button Variants */
   .btn-luxury {
     @apply bg-gradient-to-r from-primary via-luxury-gold to-primary-glow text-primary-foreground;
@@ -179,7 +215,8 @@
   }
 
   .card-product {
-    @apply card-luxury group cursor-pointer;
+    /* 'group' must be added in markup, not with @apply */
+    @apply card-luxury cursor-pointer;
     @apply hover:-translate-y-2 hover:shadow-[var(--shadow-luxury)];
   }
 
