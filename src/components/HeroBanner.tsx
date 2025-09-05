@@ -65,35 +65,37 @@ const HeroBanner = () => {
       </div>
 
       <div className="relative container mx-auto px-4 h-full flex items-center">
-        <div className="max-w-2xl space-y-6 fade-in">
-          <Badge className="bg-primary/20 text-primary border-primary/30 hover:bg-primary/30">
-            <Sparkles className="w-3 h-3 mr-1" />
+        <div className="max-w-3xl space-y-8 fade-in bg-pattern-dots">
+          <Badge className="bg-gradient-primary/20 text-primary border-primary/30 hover:bg-gradient-primary/30 
+                         backdrop-blur-sm shadow-soft px-4 py-2 rounded-full text-sm font-semibold
+                         hover:shadow-glow transition-all duration-300 hover-shine">
+            <Sparkles className="w-4 h-4 mr-2 float" />
             {slides[currentSlide].badge}
           </Badge>
 
-          <div className="space-y-4">
-            <h1 className="text-5xl md:text-6xl font-serif font-bold text-foreground leading-tight">
+          <div className="space-y-6">
+            <h1 className="text-6xl md:text-7xl font-serif font-bold text-foreground leading-tight tracking-tight">
               {slides[currentSlide].title.split(' ').map((word, index) => (
-                <span key={index} className={index === 0 ? 'text-gradient-primary' : ''}>
+                <span key={index} className={index === 0 ? 'text-gradient-primary text-luxury shimmer' : 'slide-up'}>
                   {word}{' '}
                 </span>
               ))}
             </h1>
 
-            <h2 className="text-xl md:text-2xl font-medium text-muted-foreground">
+            <h2 className="text-2xl md:text-3xl font-medium text-muted-foreground leading-relaxed slide-up">
               {slides[currentSlide].subtitle}
             </h2>
 
-            <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
+            <p className="text-xl text-muted-foreground/90 max-w-2xl leading-relaxed font-light slide-up">
               {slides[currentSlide].description}
             </p>
           </div>
 
-          <div className="flex gap-4">
-            <Button size="lg" className="btn-luxury hover-glow">
+          <div className="flex gap-6 slide-up">
+            <Button size="lg" className="btn-luxury hover-glow text-lg px-10 py-4">
               {slides[currentSlide].cta}
             </Button>
-            <Button variant="outline" size="lg" className="backdrop-blur-sm bg-background/20 border-border/30 hover:bg-background/30">
+            <Button variant="outline" size="lg" className="btn-elegant text-lg px-8 py-4 hover-shine">
               Learn More
             </Button>
           </div>
